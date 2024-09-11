@@ -108,9 +108,11 @@ jQuery(document).ready(function($) {
     $.ajax({
       type: "POST",
       url: action,
+
       data: str,
       success: function(msg) {
-        if (msg == 'OK') {
+       console.log(msg)
+        if (msg.msg == 'ok') {
           this_form.find('.loading').slideUp();
           this_form.find('.sent-message').slideDown();
           this_form.find("input:not(input[type=submit]), textarea").val('');
